@@ -324,3 +324,65 @@ console.log(penguin.fly());
 
 /* 23 */
 
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+// Only change code below this line
+
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("Plane");
+  }
+}
+glideMixin(bird);
+glideMixin(boat);
+
+/* 24 */
+
+function Bird() {
+  let weight = 15;
+  this.getWeight = () => {
+    return weight;
+  }
+}
+
+/* 25 */
+
+(function() {
+  console.log("A cozy nest is ready");
+})();
+
+/* 26 */
+
+let isCuteMixin = function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+};
+let singMixin = function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+  };
+};
+
+let funModule = (function() {
+  return {
+    isCuteMixin: function(obj) {
+      obj.isCute = function() {
+        return true;
+      }
+    },
+    singMixin: function(obj) {
+      obj.sing = function() {
+        console.log("Singing to an awesome tune");
+      }
+    }
+  }
+})();
